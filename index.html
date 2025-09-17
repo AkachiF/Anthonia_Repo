@@ -23,15 +23,95 @@
         <link href="css/apexcharts.css" rel="stylesheet">
 
         <link href="css/tooplate-mini-finance.css" rel="stylesheet">
-<!--
 
-Tooplate 2135 Mini Finance
+        <!-- Day 3: Polished & Accessible footer styles -->
+        <style>
+          :root{
+            --footer-bg: #0b0b0b;
+            --footer-text: #ffffff;
+            --footer-link: #dbeafe; /* light link color */
+            --footer-padding-vertical: 1.125rem; /* ~18px */
+            --footer-max-width: 1100px;
+          }
 
-https://www.tooplate.com/view/2135-mini-finance
+          /* Base footer layout */
+          .site-footer {
+            background: var(--footer-bg) !important;
+            color: var(--footer-text) !important;
+            font-size: 0.875rem; /* 14px */
+            line-height: 1.5;
+            padding: var(--footer-padding-vertical) 0;
+            width: 100%;
+          }
 
-Bootstrap 5 Dashboard Admin Template
+          .site-footer .footer-inner {
+            max-width: var(--footer-max-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            padding: 0 1rem;
+            flex-wrap: wrap;
+          }
 
--->
+          .site-footer .footer-nav {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.25rem;
+          }
+
+          .site-footer .footer-nav a {
+            color: var(--footer-link);
+            text-decoration: none;
+            font-size: 1rem; /* 16px for links */
+            padding: 6px 8px; /* increases hit area */
+            border-radius: 4px;
+            display: inline-block;
+          }
+
+          .site-footer .footer-nav a:hover,
+          .site-footer .footer-nav a:focus {
+            text-decoration: underline;
+          }
+
+          /* Keyboard focus visibility for accessibility */
+          .site-footer .footer-nav a:focus-visible {
+            outline: 3px solid #ffd54f;
+            outline-offset: 2px;
+          }
+
+          .site-footer .copyright-text {
+            margin: 0;
+            color: var(--footer-text);
+            font-size: 0.95rem;
+          }
+
+          /* Ensure tap targets are large enough on mobile */
+          .site-footer .footer-nav a { min-height: 44px; line-height: 1.6; }
+
+          /* Mobile layout: stack content */
+          @media (max-width: 480px) {
+            .site-footer .footer-inner { flex-direction: column; align-items: flex-start; }
+            .site-footer .footer-nav { margin-bottom: 0.5rem; }
+            .site-footer .footer-nav a { font-size: 0.95rem; }
+            .site-footer .copyright-text { font-size: 0.95rem; }
+          }
+
+          /* Small utility to visually hide content but keep it accessible */
+          .sr-only {
+            position: absolute !important;
+            width: 1px !important;
+            height: 1px !important;
+            padding: 0 !important;
+            margin: -1px !important;
+            overflow: hidden !important;
+            clip: rect(0,0,0,0) !important;
+            white-space: nowrap !important;
+            border: 0 !important;
+          }
+        </style>
 
     </head>
     
@@ -578,17 +658,19 @@ Bootstrap 5 Dashboard Admin Template
                         </div>
                     </div>
 
-                    <footer class="site-footer">
-                        <div class="container">
-                            <div class="row">
-                                
-                                <div class="col-lg-12 col-12">
-                                    <p class="copyright-text">
-                                    Mini Finance v1.0 — Deployed on <span id="deploy-date"></span> — By Anthonia Akachi Francis 
-                                </p>
-                                </div>
+                    <footer class="site-footer" role="contentinfo">
+                        <div class="footer-inner">
 
-                            </div>
+                            <nav class="footer-nav" aria-label="Footer navigation">
+                                <a href="about.html">About</a>
+                                <a href="contact.html">Contact</a>
+                                <a href="privacy.html">Privacy</a>
+                            </nav>
+
+                            <p class="copyright-text">
+                              Mini Finance v1.0 — Deployed on <span id="deploy-date" aria-live="polite"></span> — By Anthonia Akachi Francis
+                            </p>
+
                         </div>
                     </footer>
                 </main>
