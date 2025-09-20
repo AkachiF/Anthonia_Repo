@@ -1554,4 +1554,26 @@ nav[aria-label="breadcrumb"] {
     margin: 20px auto 0 auto;
   }
 }
+.custom-border-btn:hover {
+    background-color: #198754 !important;
+    color: #fff !important;
+}
+
+/* === FOOTER STYLING === */
+footer {
+  background-color: #f4f4f4;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  color: #333;
+}
+/* === JOB CARD TYPOGRAPHY === */
+.job-card .job-title {
+  font-size: 1.5rem;     /* makes it larger */
+  font-weight: 700;      /* bold */
+  color: #222;           /* dark for readability */
+  margin-bottom: 8px;    /* space below title */
+}
+
+
 
